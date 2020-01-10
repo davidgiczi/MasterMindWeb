@@ -41,25 +41,27 @@ public class InitServlet extends HttpServlet {
        
         request.getSession().invalidate();
        
-        List<Integer> taskStore = service.randDifferentColors(6);
+        List<Integer> taskStore = service.randDifferentColors(6);   
         List<Integer> tippStore = new ArrayList<>();
         List<Integer> resultStore = new ArrayList<>();
-        List<Integer> colors = new ArrayList<>();
+        List<Integer> colorNumbers = new ArrayList<>();
         
         for (int i = 4; i < 11; i++) {
-            colors.add(i);
+            colorNumbers.add(i);
         }
         
        request.getSession().setAttribute("task", taskStore);
        request.getSession().setAttribute("tipp", tippStore);
        request.getSession().setAttribute("result", resultStore);
+       request.getSession().setAttribute("counter", 0);
        
-        
+        request.setAttribute("message", -1);
         request.setAttribute("task", taskStore);
         request.setAttribute("result", resultStore);
         request.setAttribute("tipps", tippStore);
-        request.setAttribute("colors", colors);
-        request.getRequestDispatcher("Table.jsp").forward(request, response);
+        request.setAttribute("numberOfColors", colorNumbers);
+        request.setAttribute("number", 6);
+        request.getRequestDispatcher("board.jsp").forward(request, response);
         
     }
 

@@ -5,8 +5,8 @@
         <group>
             <file>file:/C:/Users/Judut/Documents/NetBeansProjects/MasterMind/src/java/com/david/giczi/mastermind/model/MasterMindService.java</file>
             <file>file:/C:/Users/Judut/Documents/NetBeansProjects/MasterMind/src/java/com/david/giczi/mastermind/servlets/PlayServlet.java</file>
-            <file>file:/C:/Users/Judut/Documents/NetBeansProjects/MasterMind/web/Table.jsp</file>
             <file>file:/C:/Users/Judut/Documents/NetBeansProjects/MasterMind/src/java/com/david/giczi/mastermind/model/MasterMindLogic.java</file>
+            <file>file:/C:/Users/Judut/Documents/NetBeansProjects/MasterMind/web/Board.jsp</file>
             <file>file:/C:/Users/Judut/Documents/NetBeansProjects/MasterMind/web/WEB-INF/web.xml</file>
             <file>file:/C:/Users/Judut/Documents/NetBeansProjects/MasterMind/src/java/com/david/giczi/mastermind/servlets/SetupNewGameServlet.java</file>
             <file>file:/C:/Users/Judut/Documents/NetBeansProjects/MasterMind/src/java/com/david/giczi/mastermind/servlets/InitServlet.java</file>

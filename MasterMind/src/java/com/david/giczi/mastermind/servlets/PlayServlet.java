@@ -7,7 +7,6 @@ package com.david.giczi.mastermind.servlets;
 
 import com.david.giczi.mastermind.model.MasterMindLogic;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.EJB;
@@ -45,8 +44,15 @@ public class PlayServlet extends HttpServlet {
         String color2 = request.getParameter("color2");
         String color3 = request.getParameter("color3");
         String color4 = request.getParameter("color4");
-       
+        String numbColor = request.getParameter("number");
+        String diffColor = request.getParameter("different");
+        
         List<Integer> tipp = new ArrayList<>();
+        List<Integer> colorNumbers = new ArrayList<>();
+        
+        for (int i = 4; i < 11; i++) {
+            colorNumbers.add(i);
+        }
         
         tipp.add(Integer.parseInt(color1));
         tipp.add(Integer.parseInt(color2));
@@ -72,10 +78,38 @@ public class PlayServlet extends HttpServlet {
         
         request.getSession().setAttribute("result", resultstList);
         
+        int counter =(int) request.getSession().getAttribute("counter");
+        counter++;
+        request.getSession().setAttribute("counter", counter);
+        
+         if ( "false".equals(diffColor) ) {
+            
+            request.setAttribute("checking", 1);
+            
+        }
+        
+        if ( service.isEndOfTheGame(resultStore) ){
+            
+            request.setAttribute("message", 1);
+            
+        }
+        else if ( counter == 10 ) {
+            
+            request.setAttribute("message", 2);
+            
+        }
+        else {
+            
+            request.setAttribute("message", -1);
+            
+        }
+         
         request.setAttribute("task", task);
         request.setAttribute("result", resultstList);
         request.setAttribute("tipps", tippStore);
-        request.getRequestDispatcher("Table.jsp").forward(request, response);
+        request.setAttribute("numberOfColors", colorNumbers);
+        request.setAttribute("number", Integer.parseInt(numbColor));
+        request.getRequestDispatcher("board.jsp").forward(request, response);
         
     }
 

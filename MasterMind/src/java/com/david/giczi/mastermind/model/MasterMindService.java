@@ -25,7 +25,7 @@ public class MasterMindService implements MasterMindLogic{
        
        while( store.size() < 4 ) {
            
-           store.add((int)(Math.random()*numberOfColors+2));
+           store.add((int)(Math.random()*numberOfColors));
            
        }
        
@@ -39,7 +39,7 @@ public class MasterMindService implements MasterMindLogic{
         
         while ( store.size() < 4 ) {
             
-             store.add((int)(Math.random()*numberOfColors+2));
+             store.add((int)(Math.random()*numberOfColors));
         }
         
         return store;
@@ -113,11 +113,11 @@ public class MasterMindService implements MasterMindLogic{
     }
 
     @Override
-    public Boolean isEndOfTheGame(List<Boolean> resultStore) {
+    public Boolean isEndOfTheGame(List<Integer> resultStore) {
         
-        for (Boolean bool : resultStore) {
+        for (Integer result : resultStore) {
             
-            if( bool == null || !bool ) {
+            if( result == -1 || result == 0 ) {
                 
                 return false;
             }

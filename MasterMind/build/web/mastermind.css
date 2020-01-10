@@ -1,0 +1,62 @@
+       body{
+                text-align: center;
+            }
+       .task{
+                
+                background-color:#996515;
+                border: 1px solid white;
+                color: white;
+                padding: 32px 32px;
+                text-align: center;
+                border-radius: 8px;
+                
+            }
+       .field{
+                
+                background-color:#A57C00;
+                border: 1px solid white;
+                color: white;
+                padding: 32px 32px;
+                text-align: center;
+                border-radius: 8px;
+                
+            }
+            
+       .input{
+                
+                background-color:#A57C00;
+                border: 1px solid white;
+                color: white;
+                padding: 32px 32px;
+                text-align: center;
+                border-radius: 8px;
+                cursor: pointer;
+                
+            }
+      .control{
+             
+             background-color: lightyellow;
+             color: #654321;
+                
+            }
+      div.relative {
+            position: relative;
+            left: 25px;
+    }
+    
+     .bef{
+        background-color: #dfe5c9;
+          border: 3px solid  #dfe5c9;
+    }
+    
+     .in{
+        background-color:white;
+        border: 0px solid white;
+        border-radius: 10px;
+    }
+      
+    .ok{
+        background-color: black;
+        border: 0px solid black;
+        border-radius: 10px;
+    }
