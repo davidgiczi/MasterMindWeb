@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Judut
+ * @author GicziD
  */
 @WebServlet(name = "PlayServlet", urlPatterns = {"/play"})
 public class PlayServlet extends HttpServlet {

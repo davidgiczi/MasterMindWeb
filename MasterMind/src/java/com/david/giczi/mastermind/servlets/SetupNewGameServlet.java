@@ -7,7 +7,6 @@ package com.david.giczi.mastermind.servlets;
 
 import com.david.giczi.mastermind.model.MasterMindLogic;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.EJB;
@@ -19,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Judut
+ * @author GicziD
  */
 @WebServlet(name = "SetupNewGameServlet", urlPatterns = {"/newgame"})
 public class SetupNewGameServlet extends HttpServlet {

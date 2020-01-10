@@ -13,7 +13,7 @@ import javax.ejb.Stateless;
 
 /**
  *
- * @author Judut
+ * @author GicziD
  */
 @Stateless
 public class MasterMindService implements MasterMindLogic{
