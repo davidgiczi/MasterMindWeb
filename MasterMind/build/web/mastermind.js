@@ -7,15 +7,43 @@
     
    var tipp = [-1,-1,-1,-1];
    
-   var taskStore = document.getElementById("task").value;
-   var resultStore = document.getElementById("result").value;
-   var tippStore = document.getElementById("tipps").value;
-   var colorNumber = document.getElementById("number").value;
-   var msg = document.getElementById("msg").value;
+  var taskStore = JSON.parse(document.getElementById("task").value);
+  var tippStore = JSON.parse(document.getElementById("tipps").value);
+  var resultStore = JSON.parse(document.getElementById("result").value);
+ 
+  var msg = document.getElementById("msg").value;
+ 
   
   document.getElementById("send").disabled = false;
+  
+   document.getElementById("show").addEventListener("click", showPattern);
+   document.getElementById("diffColor").addEventListener("change", disabledSendButton);
+   document.getElementById("colorNumber").addEventListener("change", disabledSendButton);
+   document.getElementById("send").addEventListener("click", send);
+   document.getElementById("new").addEventListener("click", newGame);
+   document.getElementById("new").addEventListener("click", doTheClean);
+   document.getElementById("45").addEventListener("click", function(){ changeColor(0); });
+   document.getElementById("46").addEventListener("click", function(){ changeColor(1); });
+   document.getElementById("47").addEventListener("click", function(){ changeColor(2); });
+   document.getElementById("48").addEventListener("click", function(){ changeColor(3); });
+   
+   var checking = document.getElementById("diffColor").checked;
+   var colorNumber = parseInt(document.getElementById("number").value);
+   
+   document.getElementById("diffColor").addEventListener("change", function () {
+  
+   checking = document.getElementById("diffColor").checked; 
+  
+});
+   
+   document.getElementById("colorNumber").addEventListener("change", function () {
     
-   if( msg === 1 ) {
+     colorNumber = parseInt(document.getElementById("colorNumber").value);  
+    
+});
+   
+  
+   if( msg == 1 ) {
        
       if ( confirm( text[0]+" "+text[2] ) ) {
           
@@ -28,7 +56,7 @@
       }
        
    } 
-   else if ( msg === 2) {
+   else if ( msg == 2) {
        
        if ( confirm( text[1]+" "+text[2] ) ) {
           
@@ -65,6 +93,8 @@
    }
    
 }
+
+
    function changeColor(buttonId) {
     
    
@@ -78,7 +108,7 @@
     }
                 
             tipp[0]++;
-            document.getElementById("45").style.backgroundColor= colors[tipp[0]];
+            document.getElementById("45").style.backgroundColor = colors[tipp[0]];
             break;
        
             case 1 :
@@ -114,30 +144,27 @@
     
  } 
    
-   
-    function showPattern() {
+ 
+   function showPattern() {
        
-       document.getElementById("1").style.backgroundColor= colors[taskStore[0]];
-       document.getElementById("2").style.backgroundColor= colors[taskStore[1]];
-       document.getElementById("3").style.backgroundColor= colors[taskStore[2]];
-       document.getElementById("4").style.backgroundColor= colors[taskStore[3]];
+     document.getElementById("1").style.backgroundColor = colors[taskStore[0]];
+     document.getElementById("2").style.backgroundColor = colors[taskStore[1]];
+     document.getElementById("3").style.backgroundColor = colors[taskStore[2]];
+     document.getElementById("4").style.backgroundColor = colors[taskStore[3]];
      
     }
-    
+   
     function send() {
     
-    document.getElementById("c1").value = tipp[0];
-    document.getElementById("c2").value = tipp[1];
-    document.getElementById("c3").value = tipp[2];
-    document.getElementById("c4").value = tipp[3];
+   document.getElementById("c1").value = tipp[0];
+   document.getElementById("c2").value = tipp[1];
+   document.getElementById("c3").value = tipp[2];
+   document.getElementById("c4").value = tipp[3];
     
-    var checking = document.getElementById("diffColor").checked; 
-    var number = document.getElementById("colorNumber").value;
+   document.getElementById("c5").value = checking;
+   document.getElementById("c6").value = colorNumber;
     
-    document.getElementById("c5").value = checking;
-    document.getElementById("c6").value = number;
-    
-    document.getElementById("sending").submit();
+   document.getElementById("sending").submit();
     
 }
 
@@ -155,12 +182,9 @@ function doTheClean() {
 
 function newGame() {
     
-    var checking = document.getElementById("diffColor").checked; 
-    var number = document.getElementById("colorNumber").value;
-     
      document.getElementById("diff").value = checking;
-     document.getElementById("numb").value = number;
-      
-     document.getElementById("newForm").submit();
+     document.getElementById("numb").value = colorNumber;
+     
+    document.getElementById("newForm").submit();
     
 }
