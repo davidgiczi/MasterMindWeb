@@ -70,13 +70,13 @@ public class PlayServlet extends HttpServlet {
         }
         request.getSession().setAttribute("tipp", tippStore);
         
-        List<Integer> resultstList = (List<Integer>) request.getSession().getAttribute("result");
+        List<Integer> resultList = (List<Integer>) request.getSession().getAttribute("result");
         
         for (Integer result : resultStore) {
-            resultstList.add(result);
+            resultList.add(result);
         }
         
-        request.getSession().setAttribute("result", resultstList);
+        request.getSession().setAttribute("result", resultList);
         
         int counter =(int) request.getSession().getAttribute("counter");
         counter++;
@@ -105,7 +105,7 @@ public class PlayServlet extends HttpServlet {
         }
          
         request.setAttribute("task", task);
-        request.setAttribute("result", resultstList);
+        request.setAttribute("result", resultList);
         request.setAttribute("tipps", tippStore);
         request.setAttribute("numberOfColors", colorNumbers);
         request.setAttribute("number", Integer.parseInt(numbColor));
