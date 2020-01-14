@@ -51,7 +51,7 @@ public class MasterMindService implements MasterMindLogic{
     }
 
     @Override
-    public List<Integer> evalutate(List<Integer> task, List<Integer> tipp) {
+    public List<Integer> evaluate(List<Integer> task, List<Integer> tipp) {
         
         List<Integer> result = new ArrayList<>();
         List<Integer> inputTaskStore = new ArrayList<>();

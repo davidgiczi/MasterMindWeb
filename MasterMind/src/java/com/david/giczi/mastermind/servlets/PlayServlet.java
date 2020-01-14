@@ -61,7 +61,7 @@ public class PlayServlet extends HttpServlet {
         
         List<Integer> task = (List<Integer>) request.getSession().getAttribute("task");
        
-        List<Integer> resultStore = service.evalutate(task, tipp); 
+        List<Integer> resultStore = service.evaluate(task, tipp); 
         
         List<Integer> tippStore = (List<Integer>) request.getSession().getAttribute("tipp");
       

@@ -19,6 +19,6 @@ public interface MasterMindLogic {
     
     List<Integer> randDifferentColors(int numberOfColors);
     List<Integer> randNonDifferentColors(int numberOfColors);
-    List<Integer> evalutate(List<Integer> task, List<Integer> tipp);
+    List<Integer> evaluate(List<Integer> task, List<Integer> tipp);
     Boolean isEndOfTheGame(List<Integer> resultStore);
 }
