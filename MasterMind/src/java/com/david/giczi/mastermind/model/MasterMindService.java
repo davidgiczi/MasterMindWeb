@@ -54,13 +54,11 @@ public class MasterMindService implements MasterMindLogic{
     public List<Integer> evaluate(List<Integer> task, List<Integer> tipp) {
         
         List<Integer> result = new ArrayList<>();
-        List<Integer> inputTaskStore = new ArrayList<>();
-        List<Integer> inputTippStore = new ArrayList<>();
+        List<Integer> inputTaskStore = new ArrayList<>(task);
+        List<Integer> inputTippStore = new ArrayList<>(tipp);
         
         for (int i = 0; i < task.size(); i++) {
             
-            inputTaskStore.add(task.get(i));
-            inputTippStore.add(tipp.get(i));
             result.add(-1);
         }
           
@@ -69,8 +67,8 @@ public class MasterMindService implements MasterMindLogic{
             if( inputTaskStore.get(i) == inputTippStore.get(i) ) {
                 
                 result.set(i, 1);
-                inputTaskStore.set(i, null);
-                inputTippStore.set(i, null);
+                inputTaskStore.set(i, -1);
+                inputTippStore.set(i, -1);
             }        
         }
         
@@ -79,10 +77,10 @@ public class MasterMindService implements MasterMindLogic{
             
             for (int j = 0; j < inputTaskStore.size(); j++) {
                 
-                if( inputTippStore.get(i) != null && inputTaskStore.get(j) != null && inputTippStore.get(i) == inputTaskStore.get(j) ) {
+                if( inputTippStore.get(i) != -1 && inputTaskStore.get(j) != -1 && inputTippStore.get(i) == inputTaskStore.get(j) ) {
                     
                     result.set(j, 0);
-                    inputTaskStore.set(j, null);
+                    inputTaskStore.set(j, -1);
                     break;
                 }
                 
